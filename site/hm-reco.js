@@ -14,7 +14,7 @@
     if (!a) return;
     var host = a.closest('[id^="hf-"]'), code = host ? host.id.toUpperCase() : null;
     if (!code) { var c = a.closest('.fcard,.gift,.pick,.card,.srow,.hmr-card'); var el = c && c.querySelector('.code,.fcode,.scode,[data-code]'); if (el) code = (el.getAttribute('data-code') || el.textContent).trim(); }
-    var href = a.getAttribute('href') || '', store = /amazon\.com/.test(href) ? 'amazon.com' : /amazon\./.test(href) ? 'amazon.ca' : /mid=53166/.test(href) ? 'well.ca' : /mid=54255/.test(href) ? 'tru earth' : /mid=53929/.test(href) ? 'artika' : /linksynergy/.test(href) ? 'rakuten' : 'other';
+    var href = a.getAttribute('href') || '', store = /amazon\.com/.test(href) ? 'amazon.com' : /amazon\./.test(href) ? 'amazon.ca' : /mid=53166/.test(href) ? 'well.ca' : /mid=54255/.test(href) ? 'tru earth' : /mid=53929/.test(href) ? 'artika' : /offerid=959514\.|mid=36311/.test(href) ? 'dyson' : /linksynergy/.test(href) ? 'rakuten' : 'other';
     ga('affiliate_click', { item_id: code || '', retailer: store, page: path || 'home', link_url: href.split('?')[0] });
     if (!code || !byCode[code]) return;
     var r = get('seen', []); r = [code].concat(r.filter(function (x) { return x !== code; })).slice(0, 12); set('seen', r);
@@ -111,7 +111,7 @@
 
   /* 5. Label partner products and measure views and sign-ups */
   var bcss = document.createElement('style'); bcss.textContent = '.hm-src{display:inline-block;font:700 .66rem/1 var(--body,system-ui);letter-spacing:.06em;text-transform:uppercase;color:var(--muted,#5a6670);border:1px solid var(--line,#e6dfcd);border-radius:999px;padding:4px 8px;margin:4px 0 0;align-self:flex-start;width:max-content;max-width:100%}.hm-src.own{color:#fff;background:var(--olive,#5f6b47);border-color:var(--olive,#5f6b47)}'; document.head.appendChild(bcss);
-  function storeOf(h) { return /amazon\./.test(h) ? 'Amazon.ca' : /mid=53166/.test(h) ? 'Well.ca' : /mid=54255/.test(h) ? 'Tru Earth' : /mid=53929/.test(h) ? 'Artika' : 'partner'; }
+  function storeOf(h) { return /amazon\./.test(h) ? 'Amazon.ca' : /mid=53166/.test(h) ? 'Well.ca' : /mid=54255/.test(h) ? 'Tru Earth' : /mid=53929/.test(h) ? 'Artika' : /offerid=959514\.|mid=36311/.test(h) ? 'Dyson' : 'partner'; }
   function label() {
     [].slice.call(document.querySelectorAll('.card,.fcard,.pick,.srow,.gift,.hmr-card')).forEach(function (c) {
       if (c.querySelector('.hm-src')) return;
