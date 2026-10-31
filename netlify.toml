@@ -1,0 +1,8 @@
+# Hommely: static pages in /site, serverless functions in /netlify/functions.
+[build]
+  publish = "site"
+  functions = "netlify/functions"
+  command = ""
+
+[functions]
+  node_bundler = "esbuild"

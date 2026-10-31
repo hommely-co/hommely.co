@@ -1,0 +1,7 @@
+{
+  "name": "hommely-site",
+  "private": true,
+  "type": "module",
+  "description": "hommely.co: static magazine pages plus Netlify Functions for shop, downloads and Homzy quotes",
+  "engines": { "node": ">=20" }
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hommely.co/sitemap.xml
