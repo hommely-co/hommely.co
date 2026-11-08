@@ -23,7 +23,7 @@
   }, true);
 
   /* 2. Scoring */
-  var GOES = { kitchen: ['organize', 'gifts'], organize: ['kitchen', 'solvers'], cozy: ['solvers', 'love'], solvers: ['cozy', 'smart'], smart: ['solvers', 'cozy'], love: ['gifts', 'cozy'], gifts: ['love', 'cozy'] };
+  var GOES = { kitchen: ['organize', 'gifts'], organize: ['kitchen', 'solvers'], cozy: ['solvers', 'love'], solvers: ['cozy', 'smart'], smart: ['solvers', 'cozy'], love: ['gifts', 'cozy'], gifts: ['love', 'cozy'], desk: ['smart', 'solvers'] };
   var POPULAR = ['HF-C09', 'HF-C06', 'HF-K05', 'HF-S07', 'HF-K10', 'HF-O03', 'HF-L10', 'HF-S03', 'HF-C02', 'HF-A01'];
   var pageCat = (function () {
     var m = { 'clever-kitchen': 'kitchen', 'kitchen-gadgets-worth-buying': 'kitchen', 'organize-everything': 'organize', 'small-kitchen-organization': 'organize', 'fridge-organization-reset': 'organize', 'declutter-before-the-holidays': 'organize', 'cozy-home': 'cozy', 'cozy-winter-living-room': 'cozy', 'slow-canadian-winter': 'cozy', 'best-heated-blanket-canada': 'cozy', 'is-a-candle-warmer-lamp-worth-it': 'cozy', 'everyday-problem-solvers': 'solvers', 'winter-proof-your-home': 'solvers', 'how-to-stop-a-draft-under-a-door': 'solvers', 'canadian-winter-essentials': 'solvers', 'home-but-smarter': 'smart', 'smart-home-starter-kit': 'smart', 'black-friday-without-regret': 'smart', 'love-found': 'love', 'gifts-for-her-under-50': 'love', 'christmas-gifts': 'gifts', 'stocking-stuffers-under-25': 'gifts', 'gifts-for-him': 'gifts', 'secret-santa-gifts-under-30': 'gifts', 'gifts-under-50-canada': 'gifts', 'made-in-canada-gifts': 'gifts', 'greener-home': 'organize' };
