@@ -39,7 +39,8 @@
   function ga(n, p) { try { if (window.gtag) gtag('event', n, p); } catch (e) {} }
   function t(en, es) { return ES ? es : en; }
 
-  var GENERIC = /^(check price( on amazon\.ca)?( →)?|choose a design|search amazon\.(ca|com)|buy at .+|comprar en .+|buscar en .+)$/i;
+  var GENERIC = /^(check price( on amazon\.ca)?( →)?|choose a design|ver precio|elegir un diseño|search amazon\.(ca|com)|buy at .+|comprar en .+|buscar en .+)$/i;
+  var ES_PAGES = ['shop', 'for-her', 'for-him', 'for-home', 'room-to-wow', 'christmas-gifts'];
   function nameFor(a) {
     var c = a.closest('[id^="hf-"],.card,.gift,.pick,.fcard,.srow,.hmr-card,article');
     var h = c && c.querySelector('h3,b,h4');
@@ -114,7 +115,9 @@
     sel.addEventListener('change', function () { market = sel.value; save(market); ga('select_market', { market: market }); all(); });
     lab.appendChild(sel); var util = document.createElement('div'); util.className = 'hm-util'; var tools = document.createElement('div'); tools.className = 'hm-tools'; tools.appendChild(lab); util.appendChild(tools); var tb = document.querySelector('.topbar'); tb.parentNode.insertBefore(util, tb);
     var lg = document.createElement('a'); lg.className = 'hm-lang'; lg.target = '_top';
-    if (ES) { lg.href = '/'; lg.textContent = 'English'; lg.lang = 'en'; } else { lg.href = '/es'; lg.textContent = 'Español'; lg.lang = 'es'; }
+    var pth = location.pathname.replace(/\.html$/, '').replace(/\/+$/, '');
+    if (ES) { var m = pth.match(/^\/es\/(.+)$/); lg.href = m ? '/' + m[1] : '/'; lg.textContent = 'English'; lg.lang = 'en'; }
+    else { var k = pth.replace(/^\//, ''); lg.href = ES_PAGES.indexOf(k) >= 0 ? '/es/' + k : '/es'; lg.textContent = 'Español'; lg.lang = 'es'; }
     tools.appendChild(lg);
   }
   function banner() {
